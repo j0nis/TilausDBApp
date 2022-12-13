@@ -10,8 +10,7 @@ namespace TilausDBApp.Controllers
 {
     public class HomeController : Controller
     {
-        //Lisäsin kommentin tähän kohtaan
-        //TOinen kommentti
+        
         
         public ActionResult Index()
         {
