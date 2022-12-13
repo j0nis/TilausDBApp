@@ -9,9 +9,7 @@ using TilausDBApp.Models;
 namespace TilausDBApp.Controllers
 {
     public class HomeController : Controller
-    {
-        
-        
+    {   
         public ActionResult Index()
         {
             if (Session["UserName"] == null)
