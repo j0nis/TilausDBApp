@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "LogOut";
+}
+
+<h2>Logout</h2>
+
+<h4>"Haluatko kirjautua ulos käyttäjältä" + @Session["UserName"]</h4>
+
+<div class="form-group">
+
+    <div class="col-md-offset-2 col-md-10">
+
+        <input type="submit" value="Kyllä" class="btn btn-success" />
+
+    </div>
+    <div class="col-md-offset-2 col-md-10">
+
+        <input type="submit" value="Ei" class="btn btn-success" />
+
+    </div>
+
+</div>
+

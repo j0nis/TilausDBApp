@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TilausDBApp.Models.Tuotteet>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container-fluid">
+    <h2>Tuotteita @Model.Count() kappaletta</h2>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    <div class="row">
+        @foreach (TilausDBApp.Models.Tuotteet tuot in Model)
+        {
+
+            <div class="col-lg-3">
+                <div class="card mb-3">
+                    <h3 class="card-header">@tuot.Nimi</h3>
+
+                    <img src="@tuot.ImageLink" width="auto" height="200" aria-label="Placeholder: Image cap" focusable="false" role="img">
+
+                    @*<div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>*@
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">TuoteID: @tuot.TuoteID</li>
+                        <li class="list-group-item">Hinta: @tuot.Ahinta €</li>
+                        <li class="list-group-item">@Html.ActionLink("Edit", "Edit", new { id = tuot.TuoteID }) | @Html.ActionLink("Delete", "Delete", new { id = tuot.TuoteID })</li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@*{
+<tr>
+    <td>@tuot.TuoteID</td>
+    <td>@tuot.Nimi</td>
+    <td>@tuot.Ahinta</td>
+    <td>@tuot.ImageLink</td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = tuot.TuoteID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = tuot.TuoteID })
+    </td>
+</tr>
+}*@
