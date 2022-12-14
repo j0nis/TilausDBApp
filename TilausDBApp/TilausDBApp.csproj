@@ -219,6 +219,8 @@
     <Content Include="Models\TilausDBAppModel.edmx.diagram">
       <DependentUpon>TilausDBAppModel.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\TilausDBApp2022 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TilausDBApp2022 - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.1.js" />
     <Content Include="Scripts\jquery-3.6.1.min.js" />
