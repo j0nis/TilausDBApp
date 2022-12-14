@@ -12,7 +12,7 @@ namespace TilausDBApp.Controllers
 {
     public class PostitoimipaikatController : Controller
     {
-        private TilausDBEntities db = new TilausDBEntities();
+        private TilausDBEntities2 db = new TilausDBEntities2();
 
         // GET: Postitoimipaikat
         public ActionResult Index()

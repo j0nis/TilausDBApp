@@ -12,7 +12,7 @@ namespace TilausDBApp.Controllers
 {
     public class TilausrivitController : Controller
     {
-        private TilausDBEntities db = new TilausDBEntities();
+        private TilausDBEntities2 db = new TilausDBEntities2();
 
         // GET: Tilausrivit
         public ActionResult Index()

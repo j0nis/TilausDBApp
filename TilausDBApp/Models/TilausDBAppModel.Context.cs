@@ -13,10 +13,10 @@ namespace TilausDBApp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TilausDBEntities : DbContext
+    public partial class TilausDBEntities2 : DbContext
     {
-        public TilausDBEntities()
-            : base("name=TilausDBEntities")
+        public TilausDBEntities2()
+            : base("name=TilausDBEntities2")
         {
         }
     

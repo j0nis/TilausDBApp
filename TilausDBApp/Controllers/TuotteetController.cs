@@ -11,7 +11,7 @@ namespace TilausDBApp.Controllers
 {
     public class TuotteetController : Controller
     {
-        TilausDBEntities db = new TilausDBEntities();
+        TilausDBEntities2 db = new TilausDBEntities2();
         // GET: Tuotteet
         public ActionResult Index()
         {

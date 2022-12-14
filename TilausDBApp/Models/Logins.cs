@@ -12,7 +12,6 @@ namespace TilausDBApp.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
     public partial class Logins
     {
         public int LoginId { get; set; }
@@ -22,6 +21,5 @@ namespace TilausDBApp.Models
         [Required(ErrorMessage = "Anna salasana!")]
         public string PassWord { get; set; }
         public string LoginErrorMessage { get; set; }
-
     }
 }

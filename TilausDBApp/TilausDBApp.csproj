@@ -198,20 +198,13 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\TilausDBAppModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TilausDBAppModel.Context.cs</LastGenOutput>
       <DependentUpon>TilausDBAppModel.edmx</DependentUpon>
+      <LastGenOutput>TilausDBAppModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\TilausDBAppModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TilausDBAppModel.edmx</DependentUpon>
       <LastGenOutput>TilausDBAppModel.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\TilausDBAppModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TilausDBAppModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\TilausDBAppModel.edmx.diagram">
-      <DependentUpon>TilausDBAppModel.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -219,6 +212,13 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\TilausDBAppModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TilausDBAppModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TilausDBAppModel.edmx.diagram">
+      <DependentUpon>TilausDBAppModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.6.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.1.js" />
     <Content Include="Scripts\jquery-3.6.1.min.js" />
