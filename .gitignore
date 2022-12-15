@@ -364,3 +364,6 @@ FodyWeavers.xsd
 
 # Web.config -file
 Web.config
+
+# Testitiedosto toimiiko ignore
+TestiTiedosto.txt
