@@ -11,7 +11,8 @@ namespace TilausDBApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Henkilot
     {
         public int Henkilo_id { get; set; }
@@ -20,6 +21,7 @@ namespace TilausDBApp.Models
         public string Osoite { get; set; }
         public Nullable<int> Esimies { get; set; }
         public string Postinumero { get; set; }
+        [Display(Name ="Sähköposti")]
         public string Sahkoposti { get; set; }
     }
 }

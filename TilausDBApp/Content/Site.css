@@ -36,8 +36,10 @@ textarea {
 
 #logout-logo {
     text-decoration: none;
+    color: darkred;
 }
 
 #logged-in {
     margin-left:15px;
+    color: greenyellow;
 }
