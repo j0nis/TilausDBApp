@@ -24,6 +24,9 @@
             @Html.DisplayNameFor(model => model.Ahinta)
         </th>
         <th>
+            Yhteensä
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Tilaukset.Toimitusosoite)
         </th>
         <th>
@@ -45,6 +48,10 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Ahinta)
+        </td>
+        <td>
+            @{var RiviSumma = item.Ahinta * item.Maara;}
+            @RiviSumma.ToString()
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Tilaukset.Toimitusosoite)
