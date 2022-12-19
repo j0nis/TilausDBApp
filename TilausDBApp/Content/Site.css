@@ -30,16 +30,16 @@ textarea {
 }
 
 #login-logo {
-    margin-left: 550px;
+    margin-left: 0px;
     text-decoration: none;
 }
 
 #logout-logo {
     text-decoration: none;
-    color: darkred;
+    color: rgb(255, 0, 0);
 }
 
 #logged-in {
-    margin-left:15px;
+    margin-left: 0px;
     color: greenyellow;
 }
