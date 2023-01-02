@@ -32,7 +32,7 @@ namespace TilausDBApp.Controllers
             else
             {
                 ViewBag.LoggedStatus = "Kirjautunut: " + Session["UserName"];
-                ViewBag.Message = "Your application description page.";
+                
             }
             return View();
         }
@@ -46,7 +46,7 @@ namespace TilausDBApp.Controllers
             else
             {
                 ViewBag.LoggedStatus = "Kirjautunut: " + Session["UserName"];
-                ViewBag.Message = "Your contact page.";
+                
             }
             return View();
         }
