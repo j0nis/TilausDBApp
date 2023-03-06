@@ -1,0 +1,45 @@
+﻿@model IEnumerable< TilausDBApp.ViewModels.OrderRows>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TilausID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TuoteID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Maara)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ahinta)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TilausID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TuoteID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nimi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Maara)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ahinta)
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>

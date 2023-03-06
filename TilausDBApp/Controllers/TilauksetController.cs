@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using TilausDBApp.Models;
+using TilausDBApp.ViewModels;
 
 namespace TilausDBApp.Controllers
 {
@@ -145,6 +146,24 @@ namespace TilausDBApp.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult _TilausRivit(int? orderid)
+        {
+            var orderRowsList = from tu in db.Tuotteet
+                                join tr in db.Tilausrivit on tu.TuoteID equals tr.TuoteID
+                                join ti in db.Tilaukset on tr.TilausID equals ti.TilausID
+                                where ti.TilausID == orderid
+                                select new OrderRows
+                                {
+                                    TilausID = ti.TilausID,
+                                    TuoteID = tu.TuoteID,
+                                    Maara = (int)tr.Maara,
+                                    Ahinta = (float)tr.Ahinta,
+                                    Nimi = tu.Nimi,
+                                };
+
+            return PartialView(orderRowsList);
         }
     }
 }
