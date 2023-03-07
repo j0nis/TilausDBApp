@@ -280,10 +280,11 @@
     <Content Include="Views\Henkilot\Edit.cshtml" />
     <Content Include="Views\Henkilot\Index.cshtml" />
     <Content Include="Views\Tilaukset\_TilausRivit.cshtml" />
+    <Content Include="Views\Tilastot\Salesperday.cshtml" />
+    <Content Include="Views\Tilastot\Top10sales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Tilastot\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

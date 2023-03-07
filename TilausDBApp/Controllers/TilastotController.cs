@@ -9,7 +9,13 @@ namespace TilausDBApp.Controllers
     public class TilastotController : Controller
     {
         // GET: Tilastot
-        public ActionResult Index()
+
+        public ActionResult Salesperday()
+        {
+            return View();
+        }
+
+        public ActionResult Top10sales()
         {
             return View();
         }
