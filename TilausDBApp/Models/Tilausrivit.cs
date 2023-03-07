@@ -11,16 +11,12 @@ namespace TilausDBApp.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.Xml.Schema;
-
+    
     public partial class Tilausrivit
     {
         public int TilausriviID { get; set; }
         public Nullable<int> TilausID { get; set; }
         public Nullable<int> TuoteID { get; set; }
-
-        [Display(Name = "M‰‰r‰")]
         public Nullable<int> Maara { get; set; }
         public Nullable<decimal> Ahinta { get; set; }
     

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fa5374570f454b2badd1a706b31efe98" Name="Diagram1">
+      <Diagram DiagramId="15d1844a3ba2486fb4d46ee533376de3" Name="Diagram1">
         <EntityTypeShape EntityType="TilausDBModel.Asiakkaat" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="TilausDBModel.Henkilot" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TilausDBModel.Logins" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
@@ -12,9 +12,12 @@
         <EntityTypeShape EntityType="TilausDBModel.Tilaukset" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="TilausDBModel.Tilausrivit" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="TilausDBModel.Tuotteet" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TilausDBModel.database_firewall_rules" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
         <AssociationConnector Association="TilausDBModel.FK_Tilaukset_Asiakkaat" ManuallyRouted="false" />
         <AssociationConnector Association="TilausDBModel.FK_Tilausrivit_Tilaukset" ManuallyRouted="false" />
         <AssociationConnector Association="TilausDBModel.FK_Tilausrivit_Tuotteet" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TilausDBModel.Top_10_sales" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="TilausDBModel.Salesperday" Width="1.5" PointX="3.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
