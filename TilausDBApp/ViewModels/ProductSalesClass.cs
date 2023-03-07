@@ -8,6 +8,6 @@ namespace TilausDBApp.ViewModels
     public class ProductSalesClass
     {
         public string ProductName { get; set; }
-        public string ProductSales { get; set; }
+        public int ProductSales { get; set; }
     }
 }

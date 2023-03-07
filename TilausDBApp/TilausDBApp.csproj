@@ -152,6 +152,9 @@
     <Compile Include="Models\Postitoimipaikat.cs">
       <DependentUpon>TilausDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Salesperday.cs">
+      <DependentUpon>TilausDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tilaukset.cs">
       <DependentUpon>TilausDBModel.tt</DependentUpon>
     </Compile>
@@ -173,7 +176,13 @@
     <Compile Include="Models\Tilausrivit.cs">
       <DependentUpon>TilausDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Top_10_sales.cs">
+      <DependentUpon>TilausDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Tuotteet.cs">
+      <DependentUpon>TilausDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Weekdays.cs">
       <DependentUpon>TilausDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

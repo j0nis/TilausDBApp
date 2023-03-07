@@ -32,8 +32,9 @@ namespace TilausDBApp.Models
         public virtual DbSet<Tilaukset> Tilaukset { get; set; }
         public virtual DbSet<Tilausrivit> Tilausrivit { get; set; }
         public virtual DbSet<Tuotteet> Tuotteet { get; set; }
-        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
-        public virtual DbSet<Top_10_sales> Top_10_sales { get; set; }
+        public virtual DbSet<Weekdays> Weekdays { get; set; }
         public virtual DbSet<Salesperday> Salesperday { get; set; }
+        public virtual DbSet<Top_10_sales> Top_10_sales { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }

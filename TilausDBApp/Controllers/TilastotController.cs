@@ -30,7 +30,7 @@ namespace TilausDBApp.Controllers
             foreach (Top_10_sales salerfor1997 in categorySalesData)
             {
                 ProductSalesClass OneSalesRow = new ProductSalesClass();
-                OneSalesRow.ProductName = salerfor1997.ProductName;
+                OneSalesRow.ProductName = salerfor1997.Nimi;
                 OneSalesRow.ProductSales = (int)salerfor1997.ProductSales;
                 CategorySalesList.Add(OneSalesRow);
             }
