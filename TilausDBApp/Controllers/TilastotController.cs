@@ -23,23 +23,23 @@ namespace TilausDBApp.Controllers
         {
             string productNameList;
             string productSalesList;
-            List<ProductSalesClass> CategorySalesList = new List<ProductSalesClass>();
+            List<ProductSalesClass> ProductSalesList = new List<ProductSalesClass>();
 
-            var categorySalesData = from cs in db.Top_10_sales
+            var productSalesData = from cs in db.Top_10_sales
                                     select cs;
-            foreach (Top_10_sales salerfor1997 in categorySalesData)
+            foreach (Top_10_sales salesforalltime in productSalesData)
             {
                 ProductSalesClass OneSalesRow = new ProductSalesClass();
-                OneSalesRow.ProductName = salerfor1997.Nimi;
-                OneSalesRow.ProductSales = (int)salerfor1997.ProductSales;
-                CategorySalesList.Add(OneSalesRow);
+                OneSalesRow.ProductName = salesforalltime.Nimi;
+                OneSalesRow.ProductSales = (int)salesforalltime.ProductSales;
+                ProductSalesList.Add(OneSalesRow);
             }
 
-            productNameList = "'" + string.Join("','", CategorySalesList.Select(n => n.ProductName).ToList()) + "'";
-            productSalesList = string.Join(",", CategorySalesList.Select(n => n.ProductSales).ToList());
+            productNameList = "'" + string.Join("','", ProductSalesList.Select(n => n.ProductName).ToList()) + "'";
+            productSalesList = string.Join(",", ProductSalesList.Select(n => n.ProductSales).ToList());
 
-            ViewBag.categoryName = productNameList;
-            ViewBag.categorySales = productSalesList;
+            ViewBag.productName = productNameList;
+            ViewBag.productSales = productSalesList;
 
             return View();
         }
