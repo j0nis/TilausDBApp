@@ -31,17 +31,17 @@
                     </li>
 
                     @*<li class="nav-item">
-                    <a class="nav-link" href="/Home/Index">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Home/About">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Home/Contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Tuotteet/Index">Tuotteet</a>
-                </li>*@
+            <a class="nav-link" href="/Home/Index">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Home/About">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Home/Contact">Contact</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Tuotteet/Index">Tuotteet</a>
+        </li>*@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">System</a>
                         <div class="dropdown-menu">
@@ -53,18 +53,27 @@
                             <a class="dropdown-item" href="/Tilausrivit/Index">Tilausrivit</a>
                         </div>
                     </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Statistics</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/Tilastot/salesperday">Sales per day</a>
+                            <a class="dropdown-item" href="/Tilastot/top10sales">Top 10 most sold</a>
+                        </div>
+                    </li>
+
                     @if (Session["UserName"] == null)
                     {
                         <li class="navbar-brand"><a href="/Home/Login" id="login-logo">Login</a></li>
                     }
                     @if (Session["UserName"] != null)
                     {
-                        
+
                         <li class="navbar-brand" id="logged-in">@ViewBag.LoggedStatus</li>
                         <li class="navbar-brand"><a href="/Home/LogOut" id="logout-logo">Logout</a></li>
-                    
+
                     }
-                    </ul>
+                </ul>
 
                 </div>
         </div>
