@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TilausDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TilausDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Asiakkaat">
           <Key>
             <PropertyRef Name="AsiakasID" />
@@ -84,8 +84,10 @@ warning 6002: The table/view 'TilausDB.dbo.Salesperday' does not have a primary 
         <EntityType Name="Salesperday">
           <Key>
             <PropertyRef Name="WeekdayID" />
+            <PropertyRef Name="Weekday" />
           </Key>
           <Property Name="WeekdayID" Type="int" Nullable="false" />
+          <Property Name="Weekday" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NumOrders" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -164,6 +166,7 @@ warning 6002: The table/view 'TilausDB.sys.database_firewall_rules' does not hav
           <EntitySet Name="Salesperday" EntityType="Self.Salesperday" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Salesperday].[WeekdayID] AS [WeekdayID], 
+    [Salesperday].[Weekday] AS [Weekday], 
     [Salesperday].[NumOrders] AS [NumOrders]
     FROM [dbo].[Salesperday] AS [Salesperday]</DefiningQuery>
           </EntitySet>
@@ -197,8 +200,7 @@ warning 6002: The table/view 'TilausDB.sys.database_firewall_rules' does not hav
             <End Role="Tilausrivit" EntitySet="Tilausrivit" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TilausDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -285,9 +287,11 @@ warning 6002: The table/view 'TilausDB.sys.database_firewall_rules' does not hav
         <EntityType Name="Salesperday">
           <Key>
             <PropertyRef Name="WeekdayID" />
+            <PropertyRef Name="Weekday" />
           </Key>
           <Property Name="WeekdayID" Type="Int32" Nullable="false" />
           <Property Name="NumOrders" Type="Int32" />
+          <Property Name="Weekday" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Top_10_sales">
           <Key>
@@ -465,6 +469,7 @@ warning 6002: The table/view 'TilausDB.sys.database_firewall_rules' does not hav
           <EntitySetMapping Name="Salesperday">
             <EntityTypeMapping TypeName="TilausDBModel.Salesperday">
               <MappingFragment StoreEntitySet="Salesperday">
+                <ScalarProperty Name="Weekday" ColumnName="Weekday" />
                 <ScalarProperty Name="WeekdayID" ColumnName="WeekdayID" />
                 <ScalarProperty Name="NumOrders" ColumnName="NumOrders" />
               </MappingFragment>

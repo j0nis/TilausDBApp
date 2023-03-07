@@ -16,6 +16,26 @@ namespace TilausDBApp.Controllers
 
         public ActionResult Salesperday()
         {
+            string weekdayNameList;
+            string perdaySalesList;
+            List<SalesPerDay> ProductSalesList = new List<SalesPerDay>();
+
+            var perdaySalesData = from cs in db.Salesperday
+                                   select cs;
+            foreach (Salesperday salesforalltime in perdaySalesData)
+            {
+                SalesPerDay OneSalesRow = new SalesPerDay();
+                OneSalesRow.weekdayName = salesforalltime.Weekday;
+                OneSalesRow.perdaySales = (int)salesforalltime.NumOrders;
+                ProductSalesList.Add(OneSalesRow);
+            }
+
+            weekdayNameList = "'" + string.Join("','", ProductSalesList.Select(n => n.weekdayName).ToList()) + "'";
+            perdaySalesList = string.Join(",", ProductSalesList.Select(n => n.perdaySales).ToList());
+
+            ViewBag.weekdayName = weekdayNameList;
+            ViewBag.perdaySales = perdaySalesList;
+
             return View();
         }
 

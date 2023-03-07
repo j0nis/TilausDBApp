@@ -3,6 +3,45 @@
     ViewBag.Title = "Salesperday";
 }
 
+@section scripts {
+    <script type="text/javascript">
+
+        let labelTexts = [@Html.Raw(ViewBag.weekdayName)];
+        let dataValues = [@ViewBag.perdaySales];
+
+        const ctx = document.getElementById('barcanvas').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labelTexts,
+                datasets: [{
+                    label: 'Sales in money per category',
+                    data: dataValues,
+                    backgroundColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(100,255,10,1)',
+                        'rgba(10,99,232,1)',
+                        'rgba(50,200,130,1)',
+                        'rgba(200,100,170,1)',
+                        'rgba(30,150,255,1)',
+                        'rgba(222,0,230,1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    </script>
+}
+
 <h2>Sales per day</h2>
 
 <div class="container">

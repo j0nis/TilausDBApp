@@ -16,5 +16,6 @@ namespace TilausDBApp.Models
     {
         public int WeekdayID { get; set; }
         public Nullable<int> NumOrders { get; set; }
+        public string Weekday { get; set; }
     }
 }
