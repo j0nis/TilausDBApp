@@ -239,6 +239,7 @@
     <None Include="Properties\PublishProfiles\TilausDBApp2022 - Web Deploy1.pubxml" />
     <None Include="Properties\PublishProfiles\TilausDBApp2022 - Web Deploy2.pubxml" />
     <None Include="Properties\PublishProfiles\TilausDBAppi - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TilausDBAppi - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.6.3.intellisense.js" />
     <Content Include="Scripts\chart.js" />
     <Content Include="Scripts\chart.min.js" />

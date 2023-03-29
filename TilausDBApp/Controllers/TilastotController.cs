@@ -16,52 +16,68 @@ namespace TilausDBApp.Controllers
 
         public ActionResult Salesperday()
         {
-            string weekdayNameList;
-            string perdaySalesList;
-            List<SalesPerDay> ProductSalesList = new List<SalesPerDay>();
-
-            var perdaySalesData = from cs in db.Salesperday
-                                   select cs;
-            foreach (Salesperday salesforalltime in perdaySalesData)
+            if (Session["UserName"] == null)
             {
-                SalesPerDay OneSalesRow = new SalesPerDay();
-                OneSalesRow.weekdayName = salesforalltime.Weekday;
-                OneSalesRow.perdaySales = (int)salesforalltime.NumOrders;
-                ProductSalesList.Add(OneSalesRow);
+                return RedirectToAction("login", "home");
             }
+            else
+            {
+                ViewBag.LoggedStatus = "Kirjautunut: " + Session["UserName"];
+                string weekdayNameList;
+                string perdaySalesList;
+                List<SalesPerDay> ProductSalesList = new List<SalesPerDay>();
 
-            weekdayNameList = "'" + string.Join("','", ProductSalesList.Select(n => n.weekdayName).ToList()) + "'";
-            perdaySalesList = string.Join(",", ProductSalesList.Select(n => n.perdaySales).ToList());
+                var perdaySalesData = from cs in db.Salesperday
+                                      select cs;
+                foreach (Salesperday salesforalltime in perdaySalesData)
+                {
+                    SalesPerDay OneSalesRow = new SalesPerDay();
+                    OneSalesRow.weekdayName = salesforalltime.Weekday;
+                    OneSalesRow.perdaySales = (int)salesforalltime.NumOrders;
+                    ProductSalesList.Add(OneSalesRow);
+                }
 
-            ViewBag.weekdayName = weekdayNameList;
-            ViewBag.perdaySales = perdaySalesList;
+                weekdayNameList = "'" + string.Join("','", ProductSalesList.Select(n => n.weekdayName).ToList()) + "'";
+                perdaySalesList = string.Join(",", ProductSalesList.Select(n => n.perdaySales).ToList());
 
-            return View();
+                ViewBag.weekdayName = weekdayNameList;
+                ViewBag.perdaySales = perdaySalesList;
+
+                return View();
+            }
         }
 
         public ActionResult Top10sales()
         {
-            string productNameList;
-            string productSalesList;
-            List<ProductSalesClass> ProductSalesList = new List<ProductSalesClass>();
-
-            var productSalesData = from cs in db.Top_10_sales
-                                    select cs;
-            foreach (Top_10_sales salesforalltime in productSalesData)
+            if (Session["UserName"] == null)
             {
-                ProductSalesClass OneSalesRow = new ProductSalesClass();
-                OneSalesRow.ProductName = salesforalltime.Nimi;
-                OneSalesRow.ProductSales = (int)salesforalltime.ProductSales;
-                ProductSalesList.Add(OneSalesRow);
+                return RedirectToAction("login", "home");
             }
+            else
+            {
+                ViewBag.LoggedStatus = "Kirjautunut: " + Session["UserName"];
+                string productNameList;
+                string productSalesList;
+                List<ProductSalesClass> ProductSalesList = new List<ProductSalesClass>();
 
-            productNameList = "'" + string.Join("','", ProductSalesList.Select(n => n.ProductName).ToList()) + "'";
-            productSalesList = string.Join(",", ProductSalesList.Select(n => n.ProductSales).ToList());
+                var productSalesData = from cs in db.Top_10_sales
+                                       select cs;
+                foreach (Top_10_sales salesforalltime in productSalesData)
+                {
+                    ProductSalesClass OneSalesRow = new ProductSalesClass();
+                    OneSalesRow.ProductName = salesforalltime.Nimi;
+                    OneSalesRow.ProductSales = (int)salesforalltime.ProductSales;
+                    ProductSalesList.Add(OneSalesRow);
+                }
 
-            ViewBag.productName = productNameList;
-            ViewBag.productSales = productSalesList;
+                productNameList = "'" + string.Join("','", ProductSalesList.Select(n => n.ProductName).ToList()) + "'";
+                productSalesList = string.Join(",", ProductSalesList.Select(n => n.ProductSales).ToList());
 
-            return View();
+                ViewBag.productName = productNameList;
+                ViewBag.productSales = productSalesList;
+
+                return View();
+            }
         }
     }
 }
